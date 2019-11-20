@@ -1,13 +1,10 @@
-body {
-  text-align: center;
-  background-color: #011F3F;
-}
+
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
-  color: #FEF2BF;
+  color: grey;
 }
 
 .container {
@@ -17,21 +14,13 @@ body {
 
 }
 
-.btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
-}
 
 .game-over {
-  background-color: red;
+  background-color: darkred;
   opacity: 0.8;
 }
 
-.red {
+/* .red {
   background-color: red;
 }
 
@@ -45,9 +34,61 @@ body {
 
 .yellow {
   background-color: yellow;
-}
+} */
 
 .pressed {
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 100px white;
   background-color: grey;
 }
+
+body { margin:20px; background:hsl(70, 31%, 85%); text-align:center; }
+
+.balloon {
+  display:inline-block;
+  width:120px;
+  height:145px;
+  background:hsl(245,40%,65%);
+  border-radius:80%;
+  position:relative;
+  /* box-shadow:inset 10px 10px 0 rgba(0,0,0,0.07); */
+  margin:20px 30px;
+  /* transition:transform 0.5s ease; */
+  z-index:10;
+  /* animation:balloons 4s ease-in-out infinite; */
+  transform-origin:bottom center;
+}
+
+
+
+
+.balloon:before {
+  content:"▲";
+  font-size:20px;
+  color:hsl(245,40%,65%);
+  display:block;
+  text-align:center;
+  width:100%;
+  position:absolute;
+  bottom:-12px;
+  z-index:-100;
+}
+
+.balloon:after {
+ display:inline-block; top:153px;
+  position:absolute;
+  height:250px;
+  width:1px;
+  margin:0 auto;
+  content:"";
+  background:rgba(0,0,0,0.2);
+}
+
+
+.balloon:nth-child(2){ background:hsl(139,50%,60%);  }
+.balloon:nth-child(2):before { color:hsl(139,30%,50%);  }
+
+.balloon:nth-child(4){ background:hsl(59,50%,58%); }
+.balloon:nth-child(4):before { color:hsl(59,30%,52%);  }
+
+.balloon:nth-child(3){ background:hsl(23,55%,57%);  }
+.balloon:nth-child(3):before { color:hsl(23,44%,46%);  }
