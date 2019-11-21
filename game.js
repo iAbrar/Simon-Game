@@ -4,12 +4,13 @@ var gamePattern = [];
 
 var userClickedPattern = [];
 
-var level;
+var level=0;
 
 var startGame = false;
 
 $(document).on('keypress',function(e) {
   startGame = true;
+  $('body').removeClass('game-over');
 
 if(startGame)
   nextSequence();
@@ -50,7 +51,6 @@ function animatePress(element){
 function startOver(){
   startGame = false;
   gamePattern = [];
-  $('body').removeClass('game-over');
   level = 0;
 }
 
